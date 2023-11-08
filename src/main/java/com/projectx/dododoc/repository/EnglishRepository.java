@@ -1,29 +1,20 @@
 package com.projectx.dododoc.repository;
 
 import com.projectx.dododoc.domain.English;
+import com.projectx.dododoc.domain.Korean;
 
 import java.util.*;
 
-public class EnglishRepository {
+public interface EnglishRepository {
 
-    private static Map<Long, English> store = new HashMap<>();
-    private static long sequence = 0L;
+    English save(English eng);
 
-    public English save(English eng) {
-        eng.setId(++sequence);
-        store.put(eng.getId(), eng);
-        return eng;
-    }
+    Optional<English> findById(Long id);
 
-    public Optional<English> findById(Long id) {
-        return Optional.ofNullable(store.get(id));
-    }
+    Optional<English> findByLang(String lang);
 
-    public List<English> findAll() {
-        return new ArrayList<>(store.values());
-    }
+    Optional<English> findBySentence(String sentence);
 
-    public void clearStore() {
-        store.clear();
-    }
+    List<English> findAll();
+
 }

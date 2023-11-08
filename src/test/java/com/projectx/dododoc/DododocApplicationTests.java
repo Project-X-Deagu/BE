@@ -1,4 +1,4 @@
-package com.projectx.dododoc.service;
+package com.projectx.dododoc;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

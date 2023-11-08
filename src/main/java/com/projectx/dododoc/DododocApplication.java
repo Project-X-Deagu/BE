@@ -1,4 +1,4 @@
-package com.projectx.dododoc.service;
+package com.projectx.dododoc;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

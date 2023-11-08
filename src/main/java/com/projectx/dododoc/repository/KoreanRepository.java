@@ -4,25 +4,13 @@ import com.projectx.dododoc.domain.Korean;
 
 import java.util.*;
 
-public class KoreanRepository {
-    private static Map<Long, Korean> store = new HashMap<>();
-    private static long sequence = 0L;
+public interface KoreanRepository {
 
-    public Korean save(Korean kor) {
-        kor.setId(++sequence);
-        store.put(sequence, kor);
-        return kor;
-    }
+    Korean save(Korean kor);
 
-    public Optional<Korean> findById(Long id) {
-        return Optional.ofNullable(store.get(id));
-    }
+    Optional<Korean> findById(Long id);
 
-    public List<Korean> findAll() {
-        return new ArrayList<>(store.values());
-    }
+    Optional<Korean> findBySentence(String sentence);
 
-    public void clearStore() {
-        store.clear();
-    }
+    List<Korean> findAll();
 }
