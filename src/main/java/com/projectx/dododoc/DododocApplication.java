@@ -14,8 +14,6 @@ import java.util.List;
 
 @SpringBootApplication
 public class DododocApplication {
-	@Autowired KoreanService korService;
-	@Autowired KoreanRepository korRepository;
 
 	public static void main(String[] args) throws IOException {
 		List<String> lines = Files.readAllLines(Paths.get("/Users/jiwon/Downloads/korean_db.txt"));

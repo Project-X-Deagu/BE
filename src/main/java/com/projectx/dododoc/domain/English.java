@@ -1,5 +1,6 @@
 package com.projectx.dododoc.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -12,6 +13,7 @@ public class English {
     @GeneratedValue(strategy = IDENTITY)
     private long id;
     private String lang;
+    @Column(length = 10000)
     private String sentence;
 
     public long getId() {
