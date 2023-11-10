@@ -16,7 +16,6 @@ import java.util.List;
 public class DododocApplication {
 
 	public static void main(String[] args) throws IOException {
-		List<String> lines = Files.readAllLines(Paths.get("/Users/jiwon/Downloads/korean_db.txt"));
 		SpringApplication.run(DododocApplication.class, args);
 	}
 }
