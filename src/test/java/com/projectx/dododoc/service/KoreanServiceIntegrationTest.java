@@ -4,7 +4,9 @@ import com.projectx.dododoc.domain.English;
 import com.projectx.dododoc.domain.Korean;
 import com.projectx.dododoc.repository.EnglishRepository;
 import com.projectx.dododoc.repository.KoreanRepository;
+import com.projectx.dododoc.repository.KoreanSentenceRepository;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -20,8 +22,14 @@ import java.util.List;
 @Transactional
 public class KoreanServiceIntegrationTest {
 
-    @Autowired KoreanService korService;
-    @Autowired KoreanRepository korRepository;
+    KoreanService korService;
+    KoreanSentenceRepository korRepository;
+
+    @BeforeEach
+    public void beforeEach() {
+        korRepository = new KoreanSentenceRepository();
+        korService = new KoreanService(korRepository);
+    }
 
     @Test
     void 문장삽입() {

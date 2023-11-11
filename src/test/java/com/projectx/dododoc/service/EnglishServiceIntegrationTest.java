@@ -3,6 +3,7 @@ package com.projectx.dododoc.service;
 import com.projectx.dododoc.domain.English;
 import com.projectx.dododoc.domain.Korean;
 import com.projectx.dododoc.repository.EnglishRepository;
+import com.projectx.dododoc.repository.EnglishSentenceRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +24,7 @@ public class EnglishServiceIntegrationTest {
 
     @Autowired EnglishService engService;
     @Autowired
-    EnglishRepository englishRepository;
+    EnglishSentenceRepository englishRepository;
 
     @Test
     void 문장삽입() {

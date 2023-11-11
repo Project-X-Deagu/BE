@@ -1,21 +1,19 @@
 package com.projectx.dododoc;
 
-import com.projectx.dododoc.domain.Korean;
-import com.projectx.dododoc.repository.KoreanRepository;
 import com.projectx.dododoc.service.KoreanService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.List;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 @SpringBootApplication
 public class DododocApplication {
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args)  {
 		SpringApplication.run(DododocApplication.class, args);
 	}
 }

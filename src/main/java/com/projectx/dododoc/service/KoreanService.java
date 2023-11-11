@@ -2,6 +2,7 @@ package com.projectx.dododoc.service;
 
 import com.projectx.dododoc.domain.Korean;
 import com.projectx.dododoc.repository.KoreanRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 import java.util.Optional;
@@ -9,6 +10,7 @@ import java.util.Optional;
 public class KoreanService {
     private final KoreanRepository korRepository;
 
+    @Autowired
     public KoreanService(KoreanRepository korRepository) {
         this.korRepository = korRepository;
     }
