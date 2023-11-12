@@ -42,15 +42,4 @@ public class KoreanServiceIntegrationTest {
         Assertions.assertThat(kor).isEqualTo(tmp);
     }
 
-    @Test
-    @Commit
-    void insert() throws IOException {
-        List<String> lines = Files.readAllLines(Paths.get("/Users/jiwon/Downloads/korean_db.txt"));
-        for (int i = 0; i < lines.size(); i++) {
-            Korean kor = new Korean();
-            kor.setSentence(lines.get(i));
-
-            korService.join(kor);
-        }
-    }
 }
