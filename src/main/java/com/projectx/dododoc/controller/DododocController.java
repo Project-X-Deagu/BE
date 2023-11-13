@@ -35,6 +35,7 @@ public class DododocController {
     @GetMapping("/")
     public void home() throws IOException {
         List<String> lines = Files.readAllLines(Paths.get("/Users/jiwon/Downloads/korean_db.txt"));
+        //List<String> lines = Files.readAllLines(Paths.get("/Users/zoangrak/Documents/univ/Project-X/dododoc/dododoc-db/korean_db.txt"));
         for (int i = 0; i < lines.size(); i++) {
             Korean kor = new Korean();
             kor.setSentence(lines.get(i));
@@ -43,6 +44,7 @@ public class DododocController {
         }
 
         List<String> lines1 = Files.readAllLines(Paths.get("/Users/jiwon/Downloads/java_db.txt"));
+        //List<String> lines1 = Files.readAllLines(Paths.get("/Users/zoangrak/Documents/univ/Project-X/dododoc/dododoc-db/java_db.txt"));
         for (int i = 0; i < lines1.size(); i++) {
             English eng = new English();
             eng.setSentence(lines1.get(i));
@@ -52,6 +54,7 @@ public class DododocController {
         }
 
         List<String> lines2 = Files.readAllLines(Paths.get("/Users/jiwon/Downloads/python_db.txt"));
+        //List<String> lines2 = Files.readAllLines(Paths.get("/Users/zoangrak/Documents/univ/Project-X/dododoc/dododoc-db/python_db.txt"));
         for (int i = 0; i < lines2.size(); i++) {
             English eng = new English();
             eng.setSentence(lines2.get(i));
@@ -61,6 +64,7 @@ public class DododocController {
         }
 
         List<String> lines3 = Files.readAllLines(Paths.get("/Users/jiwon/Downloads/c_db.txt"));
+        //List<String> lines3 = Files.readAllLines(Paths.get("/Users/zoangrak/Documents/univ/Project-X/dododoc/dododoc-db/c_db.txt"));
         for (int i = 0; i < lines3.size(); i++) {
             English eng = new English();
             eng.setSentence(lines3.get(i));
