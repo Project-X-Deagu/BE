@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -75,9 +76,63 @@ public class DododocController {
         return kor_sen;
     }
 
-    @GetMapping("/api/English")
-    public List<English> Eng_sentence(Model model) {
+    @GetMapping("/api/english/java")
+    public String[] JAVA_sentence(Model model) {
         List<English> eng_sen = engService.findSentences();
-        return eng_sen;
+        String[] tmp = new String[10000];
+        String str = "";
+        int cnt = 0;
+
+        for (int i = 0; i < eng_sen.size(); i++) {
+            if (eng_sen.get(i).getSentence().equals("#")) {
+                tmp[cnt++] = str;
+                str = "";
+            }
+            else if (eng_sen.get(i).getLang().equals("JAVA")) {
+                str += eng_sen.get(i).getSentence() + "\n";
+            }
+        }
+        tmp[cnt++] = str;
+        return tmp;
+    }
+
+    @GetMapping("/api/english/python")
+    public String[] PYTHON_sentence(Model model) {
+        List<English> eng_sen = engService.findSentences();
+        String[] tmp1 = new String[10000];
+        String str = "";
+        int cnt1 = 0;
+
+        for (int i = 0; i < eng_sen.size(); i++) {
+            if (eng_sen.get(i).getSentence().equals("#")) {
+                tmp1[cnt1++] = str;
+                str = "";
+            }
+            else if (eng_sen.get(i).getLang().equals("PYTHON")) {
+                str += eng_sen.get(i).getSentence() + "\n";
+            }
+        }
+        tmp1[cnt1++] = str;
+        return tmp1;
+    }
+
+    @GetMapping("/api/english/c")
+    public String[] C_sentence(Model model) {
+        List<English> eng_sen = engService.findSentences();
+        String[] tmp2 = new String[10000];
+        String str = "";
+        int cnt2 = 0;
+
+        for (int i = 0; i < eng_sen.size(); i++) {
+            if (eng_sen.get(i).getSentence().equals("#")) {
+                tmp2[cnt2++] = str;
+                str = "";
+            }
+            else if (eng_sen.get(i).getLang().equals("C")) {
+                str += eng_sen.get(i).getSentence() + "\n";
+            }
+        }
+        tmp2[cnt2++] = str;
+        return tmp2;
     }
 }
