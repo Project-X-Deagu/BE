@@ -84,59 +84,41 @@ public class DododocController {
     public String[] JAVA_sentence(Model model) {
         List<English> eng_sen = engService.findSentences();
         String[] tmp = new String[10000];
-        String str = "";
         int cnt = 0;
 
         for (int i = 0; i < eng_sen.size(); i++) {
-            if (eng_sen.get(i).getSentence().equals("#")) {
-                tmp[cnt++] = str;
-                str = "";
-            }
-            else if (eng_sen.get(i).getLang().equals("JAVA")) {
-                str += eng_sen.get(i).getSentence() + "\n";
+            if (eng_sen.get(i).getLang().equals("JAVA")){
+                tmp[cnt++] = eng_sen.get(i).getSentence();
             }
         }
-        tmp[cnt++] = str;
         return tmp;
     }
 
     @GetMapping("/api/english/python")
     public String[] PYTHON_sentence(Model model) {
-        List<English> eng_sen = engService.findSentences();
-        String[] tmp1 = new String[10000];
-        String str = "";
-        int cnt1 = 0;
+        List<English> eng_sen1 = engService.findSentences();
+        String[] tmp = new String[10000];
+        int cnt = 0;
 
-        for (int i = 0; i < eng_sen.size(); i++) {
-            if (eng_sen.get(i).getSentence().equals("#")) {
-                tmp1[cnt1++] = str;
-                str = "";
-            }
-            else if (eng_sen.get(i).getLang().equals("PYTHON")) {
-                str += eng_sen.get(i).getSentence() + "\n";
+        for (int i = 0; i < eng_sen1.size(); i++) {
+            if (eng_sen1.get(i).getLang().equals("PYTHON")){
+                tmp[cnt++] = eng_sen1.get(i).getSentence();
             }
         }
-        tmp1[cnt1++] = str;
-        return tmp1;
+        return tmp;
     }
 
     @GetMapping("/api/english/c")
     public String[] C_sentence(Model model) {
-        List<English> eng_sen = engService.findSentences();
-        String[] tmp2 = new String[10000];
-        String str = "";
-        int cnt2 = 0;
+        List<English> eng_sen2 = engService.findSentences();
+        String[] tmp = new String[10000];
+        int cnt = 0;
 
-        for (int i = 0; i < eng_sen.size(); i++) {
-            if (eng_sen.get(i).getSentence().equals("#")) {
-                tmp2[cnt2++] = str;
-                str = "";
-            }
-            else if (eng_sen.get(i).getLang().equals("C")) {
-                str += eng_sen.get(i).getSentence() + "\n";
+        for (int i = 0; i < eng_sen2.size(); i++) {
+            if (eng_sen2.get(i).getLang().equals("C")){
+                tmp[cnt++] = eng_sen2.get(i).getSentence();
             }
         }
-        tmp2[cnt2++] = str;
-        return tmp2;
+        return tmp;
     }
 }
